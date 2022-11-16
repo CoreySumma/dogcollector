@@ -5,16 +5,18 @@
 
 {% for dog in dogs %}
   <div class="card">
+    <a href="{% url 'detail' dog.id %}">
     <div class="card-content">
-      <span class="card-title">{{ dog.Name }}</span>
-      <p>Breed: {{ dog.Breed }}</p>
-      <p>Description: {{ dog.Description }}</p>
-      {% if dog.Age > 0 %}
-        <p>Age: {{ dog.Age }}</p>
+      <span class="card-title">{{ dog.name }}</span>
+      <p>breed: {{ dog.breed }}</p>
+      <p>description: {{ dog.description|linebreaks }}</p>
+      {% if dog.age > 0 %}
+        <p>age: {{ dog.age }}</p>
       {% else %}
-        <p>Age: Puppy</p>
+        <p>age: puppy</p>
       {% endif %}
     </div>
+    </a>
   </div>
 {% endfor %}
 
