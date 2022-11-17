@@ -29,7 +29,6 @@
       {{ feeding_form.as_p }}
       <input type="submit" class="btn" value="Add Feeding">
     </form>
-    <form method="POST">
     <table class="striped">
       <thead>
         <tr>
@@ -88,9 +87,9 @@
   {% else %}
     <h5>{{dog.name}} Already Has All Toys Available</h5>
   {% endif %}
-</div>
   </div>
 </div>
+
 <script>
   const dateEl = document.getElementById('id_date');
   M.Datepicker.init(dateEl, {
